@@ -405,6 +405,8 @@
         loadingText.style.display = "block";
 
         // Estructura de carga útil limpia en JSON
+        const tipoDoc = document.querySelector('input[name="tipo_doc"]:checked').value;
+        const numDoc = document.getElementById('numDoc').value;
         const payload = {
             fecha: document.getElementById('fecha').value,
             tipo_documento: tipoDoc,  //se esta cambiando para que jale boleta o guia
