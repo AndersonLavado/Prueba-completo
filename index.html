@@ -24,16 +24,20 @@
             color: var(--celsa-dark);
             display: flex;
             justify-content: center;
+            align-items: flex-start; /* Cambiado de center a flex-start para que no se rompa al crecer */
+            min-height: 100vh;
+            padding: 20px 0; /* Un pequeño margen superior e inferior para estética cuando crezca mucho */
         }
 
         .mobile-container {
             width: 100%;
             max-width: 480px;
             background-color: #FFFFFF;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
             box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            border-radius: 12px; /* Opcional: Le da un toque más pulido si se desborda en pantallas grandes */
+            overflow: visible; /* Asegura que el contenedor estire su fondo blanco con los hijos */
         }
 
         header {
@@ -75,7 +79,7 @@
 
         main {
             padding: 20px;
-            flex: 1;
+            flex: 1 0 auto;
         }
 
         h2 {
