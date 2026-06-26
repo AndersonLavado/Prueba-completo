@@ -276,7 +276,7 @@
   </div>
 
   <script>
-    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwqz9ns-nqdFehW8--dPICk9sRsP2M9Pklm2SmJG8FFJqmsce_s0Er1ZkOZ1M9f4j__/exec";
+    const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbw6yrpl68eblWBCvInDpPmt-NB0_NhjD6-KJDIiUZAqhEnM3vMKETbhiWpS6_qhVEgK/exec";
     document.getElementById('fecha').valueAsDate = new Date();
     let frameCounter = 0;
 
@@ -318,7 +318,7 @@
                     <label>Código SP</label>
                     <div class="input-wrapper">
                         <i class="fa-solid fa-id-card"></i>
-                        <input type="text" class="cod_sp" placeholder="Ej. SP-0001" required>
+                        <input type="text" class="cod_sp" placeholder="Ej. SP-0001">
                     </div>
                 </div>
             </div>
@@ -358,6 +358,9 @@
                     </label>
                     <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
                         <input type="radio" name="tipo_proceso_${frameCounter}" value="Compactado"> Compactado 
+                    </label>
+                    <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                        <input type="radio" name="tipo_proceso_${frameCounter}" value="Moler"> Moler 
                     </label>
                 </div>
             </div>
