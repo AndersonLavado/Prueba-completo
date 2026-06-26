@@ -471,18 +471,23 @@
       fetch(WEB_APP_URL, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'text/plain;charset=utf-8'
           },
           body: JSON.stringify(payload)
         })
-        .then(() => {
-          alert("¡Registro exitoso! Todos los pesos se guardaron correctamente.");
-          document.getElementById('pesajeForm').reset();
-          document.getElementById('fecha').valueAsDate = new Date();
-          
-          document.getElementById('pesajeFramesContainer').innerHTML = "";
-          frameCounter = 0;
-          agregarNuevoFrame();
+        .then(res => res.json())
+        .then((resultado) => {
+          // Ahora puedes validar la respuesta real del servidor
+          if(resultado.status === "success") {
+            alert("¡Registro exitoso! Todos los pesos se guardaron correctamente.");
+            document.getElementById('pesajeForm').reset();
+            document.getElementById('fecha').valueAsDate = new Date();
+            document.getElementById('pesajeFramesContainer').innerHTML = "";
+            frameCounter = 0;
+            agregarNuevoFrame();
+          } else {
+            alert("Error en el script: " + resultado.message);
+          }
         })
         .catch(error => {
           console.error('Error:', error);
